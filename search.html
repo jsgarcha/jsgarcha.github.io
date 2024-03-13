@@ -4,9 +4,9 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="description" content="Homepage">
+		<meta name="description" content="Homepage - Search">
 		<meta name="author" content="Jasminder Garcha">
-		<title> Homepage</title>
+		<title>Homepage - Search</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -28,8 +28,8 @@
 			</button>
 			<div class="collapse navbar-collapse max-vw-100" id="collapsednavbar">
 				<div class="navbar-nav mr-auto max-vw-100 text-break">
-					<a class="nav-link nav-item" href="search.html">
-						Search
+					<a class="nav-link nav-item" href="index.html">
+						Home
 					</a>
 					<div class="nav-item dropdown">						
 						<a class="nav-link dropdown" id="coursedropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -114,7 +114,7 @@
 								</div>
 							</div>
 							<div class="dropdown-submenu">
-								<a class="dropdown-item dropdown-toggle geolocation" role="button" data-toggle="dropdown" data-target="#geolocationmenu">
+								<a class="dropdown-item dropdown-toggle" role="button" data-toggle="dropdown" data-target="#geolocationmenu" id="geolocationbutton">
 									Geolocation
 								</a>
 								<div class="dropdown-menu" id="geolocationmenu">				
@@ -165,13 +165,37 @@
 					</nav>
 				</div>
 				<div class="col">
-					<h2 class="text-center p-1">Introduction</h2>
-					<p>Hi, I am Jasminder Garcha!</p>					
-					<h2 class="text-center p-1">Phase 1 Reflection</h2>
-					<p>I styled my homepage using Bootstrap, a CSS framework. I learned that Bootstrap is very powerful. The documentation is readily accessible and comprehensive. The CSS grid layout and components simplify responsive web design. Functionality and style are achieved by adding classes to the HTML. Bootstrap advocates mobile-first design. I imagined different designs for each viewport. With mobile-first, I adapt the default functionality and style to larger viewports. I hide or show components at breakpoints, giving the illusion of different webpages. The website is responsive.</p>
-					<p>The top navbar on my homepage is a collapsible “hamburger” on smaller viewports. On larger viewports, I implement a hybrid top and vertical navigation. The behavior is accomplished by hiding, showing, adding, removing, and modifying elements on event by script. The top nav coupled with a side bar felt intuitive, as the vertical focuses each horizontal category.</p>
-					<p>Exposure to Bootstrap, one of the most widely used framework, was fun. I may utilize vanilla CSS in the future. Due to Bootstrap’s design philosophy, I had to implement work arounds for components Bootstrap deemed obsolete, such as nested drop-downs. Phase 1 was a great learning experience in UI, UX, and RWD.</p>
-	
+					<h1 class="text-center">Search</h1>
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" placeholder="Search" id="searchbar">
+						<div class="input-group-append">
+							<button type="button" class="btn btn-primary" id="search">Search</button>
+						</div>
+					</div>
+					<input type="file" accept=".csv, .json, .xml" id="fileinput" multiple>
+					<div class="text-center d-block d-sm-none">
+						<div class="btn-group" role="group">
+							<button type="button" class="btn btn-primary upload">Upload</button>	
+							<button type="button" class="btn btn-primary download">Download</button>
+						</div>
+					</div>
+					<div class="input-group">		
+						<div class="input-group-prepend">					
+							<button type="button" class="btn btn-primary upload d-none d-sm-block" id="upload">Upload</button>	
+							<button type="button" class="btn btn-primary download d-none d-sm-block" id="download">Download</button>
+						</div>
+						<input type="text" class="form-control" placeholder="File name" id="downloadfilename">
+						<div class="input-group-append">
+							<select class="custom-select" id="fileselect">
+								<option value="File Format" selected>File Format</option>
+								<option value=".csv">.csv</option>
+								<option value=".json">.json</option>
+								<option value=".xml">.xml</option>
+							</select>							
+						</div>
+						<div class="invalid-feedback"></div>
+					</div>
+					<div id="searchresults"></div>
 				</div>
 			</div>
 		</div>
